@@ -177,21 +177,12 @@ const Login = ({ type }) => {
 
   return (
     <>
-      <div className={`flex flex-col h-screen items-center justify-center bg-primary-light p-4`}>
-
-
+      <div className={`flex flex-col h-screen items-center justify-center bg-background p-4`}>
         <Card className={` !max-w-[420px] !w-full !pt-3 `} title={
-
-
-          <span className="normal-case ">
-
+          <span className="normal-case space-y-2">
             <img className="w-40 mx-auto mt-2" src={"/logos/TCFWC.png"} />
-            <h3 className='font-bold text-xl text-center mb-2'>UThrive</h3>
-
             {page === "resetPass" && <ArrowLeft className="inline float-start cursor-pointer" onClick={() => { navigate("/"); setOtpBlock(false) }} />}
             <h6 className="text-center text-2xl">{page === "login" ? "Sign in " : "Forgot Password"}</h6>
-
-
           </span>
 
 

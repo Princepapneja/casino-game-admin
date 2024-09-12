@@ -16,9 +16,9 @@ const CustomDropdown = ({ columnFilters, handleSelectChange }) => {
   };
 
   return (
-    <div className="relative max-w-sm w-full text-text">
+    <div className="relative max-w-sm w-full text-background-foreground">
       <div
-        className={`  bg-transparent  flex gap-4 justify-between  items-center  ${isOpen ?"border-2 p-1.5 rounded border-primary" :"border p-2 border-gray-200 rounded-xl"} placeholder:font-light   text-desc cursor-pointer `}
+        className={`  bg-transparent  flex gap-4 justify-between  items-center  ${isOpen ?"border-2 p-1.5 rounded border-primary" :"border p-2 border-gray-200 rounded-xl"} placeholder:font-light text-desc cursor-pointer `}
         onClick={toggleDropdown}
       >
 

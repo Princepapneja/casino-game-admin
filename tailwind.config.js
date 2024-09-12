@@ -7,17 +7,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        "primary": "#704380",
-        "primary-light": "#F9F1E7",
+        "primary": "skyblue",
+        "secondary": "#1a2c38",
+        "primary-light": "#87ceeb80",
         "secondary-light": "#D6E8F7",
-        "secondary": "#EF601E",
-        "tertiary-light": "#E8CACE",
-        "tertiary": "#ecb035",
+        "tertiary": "#252e5f",
         "fourth": "#117FAA",
-        "text": "#3d144b",
+        "tertiary-light": "#E8CACE",
+        "primary-foreground": "black",
+        "background-foreground": "white",
+        "secondary-foreground": "white",
         "desc": "#7e7e7e",
-        //  "primary-light":"#D6E8F7",
-        "background": "#f2f2f3",
+        "background": "#213743",
         "border": "#ecf3fa"
       },
       fontFamily: {

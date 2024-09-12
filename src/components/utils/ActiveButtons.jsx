@@ -12,7 +12,7 @@ const ActiveButtons = ({ buttons, active, setActive }) => {
       {buttons?.map((button, index) => (
         <button
           className={`${
-            active === index ? '!border-primary text-primary' : 'text-gray-600'
+            active === index ? '!border-primary text-primary' : 'text-gray-300'
           } px-2 py-0.5 border-b-2 mb-1 border-transparent duration-300 hover:border-primary `}
           key={index}
           onClick={() => {

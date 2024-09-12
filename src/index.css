@@ -9,9 +9,8 @@
 }
 
 body {
-    @apply bg-[#59554E] text-text;
+    @apply bg-background text-background-foreground;
     font-family: "Lexend", sans-serif !important;
-
 }
 
 .fc {

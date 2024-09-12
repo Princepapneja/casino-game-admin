@@ -26,14 +26,10 @@ const AnimatedCard = ({ index, value, icon, title }) => {
 
   return (
     <div
-      className={`py-8 px-6 flex gap-4 items-center rounded-lg w-full text-white ${
-        index === 1
+      className={`py-8 px-6 flex gap-4 items-center rounded-lg w-full text-background-foreground ${
+        index%2 === 1
           ? 'bg-secondary'
-          : index === 0
-          ? 'bg-primary'
-          : index === 2
-          ? 'bg-fourth'
-          : 'bg-tertiary'
+          : 'bg-fourth'
       }`}
     >
       {icon}

@@ -90,7 +90,7 @@ debugger
   }, [dropDown,filteredFields,searchTerm]);
 
   return (
-    <header className='nav flex items-center justify-between p-2 md:p-4 shadow shadow-background bg-white'>
+    <header className='nav flex items-center justify-between p-2 md:p-4 shadow shadow-secondary bg-secondary'>
       <div className='flex gap-4 items-center'>
         <div className={`md:hidden`} onClick={() => { setSideBarOpen(!sideBarOpen) }} >
           {sideBarOpen ? <SidebarClose /> : <Menu />}

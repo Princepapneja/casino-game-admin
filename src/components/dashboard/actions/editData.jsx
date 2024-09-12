@@ -110,7 +110,7 @@ const EditData = ({ type, data }) => {
                             } else if (data?.type === "file") {
                                 const id = Date.now()
                                 return (
-                                    <div className={`col-span-2 grid place-items-center  ${type === "blog" && "col-span-3"}`} key={i}>
+                                    <div className={`col-span-2 grid place-items-center`} key={i}>
                                         <span className='relative'>
                                             <input
                                                 type='file'

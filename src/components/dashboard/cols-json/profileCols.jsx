@@ -48,7 +48,7 @@ const profile = [
     "key": "phone",
     max: "10",
     prefix: () => {
-      return <span className="p-2 px-3 bg-primary text-white rounded-s-lg">+1</span>
+      return <span className="p-2 px-3 bg-primary text-secondary-foreground rounded-s-lg">+1</span>
     },
     render: (properties) => {
       return properties?.phone && "+1 " + properties?.phone;

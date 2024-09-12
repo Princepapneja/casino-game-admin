@@ -99,7 +99,7 @@ function ReUseAbleTable({ loader = true, buttons, data, cols, handleRow, fetchDa
   ]
   const dataSetter = async (value = "") => {
 
-  try {
+    try {
       setColumnFilters(cols)
       const stickRight = cols?.find(q => q.sticky)
       setStickyCol(stickRight)
@@ -115,9 +115,9 @@ function ReUseAbleTable({ loader = true, buttons, data, cols, handleRow, fetchDa
         const count = Math.ceil(parseInt(data?.length) / perPage)
         setTotalPage(count === 0 ? 1 : count)
       }
-  } catch (error) {
-    console.log(error);
-  }
+    } catch (error) {
+      console.log(error);
+    }
     loader &&
       setTimeout(() => {
         setLoading(false)
@@ -210,7 +210,6 @@ function ReUseAbleTable({ loader = true, buttons, data, cols, handleRow, fetchDa
 
   return (
     <>
-
       <div className=" h-full">
         <ActiveButtons buttons={buttons} active={active} setActive={setActive} />
         <div className="flex items-center gap-4 py-4 justify-between ">
@@ -248,26 +247,26 @@ function ReUseAbleTable({ loader = true, buttons, data, cols, handleRow, fetchDa
             </div>
           }
 
-
         </div>
         <div className="flex">
           {stickyCol && columnFilters?.find(q => q.accessor === stickyCol.accessor).checked && (
             <div className=" min-w-48  flex flex-col">
               <span
                 onClick={() => handleHeading(stickyCol?.accessor)}
-                className={`rounded-tl-lg items-center justify-center   text-white flex gap-1 bg-primary whitespace-nowrap capitalize p-4 
+                className={`rounded-tl-lg items-center justify-center text-primary-foreground flex gap-1 bg-primary whitespace-nowrap capitalize p-4 
         `}
               >
                 {stickyCol.name}
               </span>
               {
-                loading ? <div className="w-full p-4">
-                  <span className="h-3 block bg-gray-200 rounded-full dark:bg-gray-700   w-full mb-4" />
-                  <span className="h-3 block bg-gray-200 rounded-full dark:bg-gray-700  w-full mb-4" />
-                  <span className="h-3 block bg-gray-200 rounded-full dark:bg-gray-700  w-full mb-4" />
-                  <span className="h-3 block bg-gray-200 rounded-full dark:bg-gray-700  w-full mb-4" />
-                  <span className="h-3 block bg-gray-200 rounded-full dark:bg-gray-700  w-full mb-4" />
-                </div>
+                loading ?
+                  <div className="w-full p-4">
+                    <span className="h-3 block bg-gray-700 rounded-full w-full mb-4" />
+                    <span className="h-3 block bg-gray-700 rounded-full w-full mb-4" />
+                    <span className="h-3 block bg-gray-700 rounded-full w-full mb-4" />
+                    <span className="h-3 block bg-gray-700 rounded-full w-full mb-4" />
+                    <span className="h-3 block bg-gray-700 rounded-full w-full mb-4" />
+                  </div>
                   :
                   <div className="flex flex-col items-stretch">
                     {filterData?.map((row, index) => (
@@ -285,9 +284,8 @@ function ReUseAbleTable({ loader = true, buttons, data, cols, handleRow, fetchDa
             </div>
           )}
 
-
           {columnFilters?.length > 0 && (
-            <table className="grow block overflow-x-auto rounded-md md:w-[calc(100vw-320px-136px)] w-[calc(100vw-4rem-136px)]">
+            <table className="grow border-primary block overflow-x-auto rounded-md md:w-[calc(100vw-320px-136px)] w-[calc(100vw-4rem-136px)]">
               <thead className="block">
                 <tr className="flex">
                   {columnFilters?.map((header) => {
@@ -327,16 +325,16 @@ function ReUseAbleTable({ loader = true, buttons, data, cols, handleRow, fetchDa
               {loading ? (
                 <tbody role="status" className="flex gap-4 animate-pulse mt-4">
                   {columnFilters?.map((e, i) => {
-                    if(e?.sticky){
+                    if (e?.sticky) {
                       return null
                     }
-                    if(!e?.checked) return null
+                    if (!e?.checked) return null
                     return <tr key={i} className="w-full">
-                      <td className="h-3 block bg-gray-200 rounded-full dark:bg-gray-700 min-w-44 w-full mb-4" />
-                      <td className="h-3 block bg-gray-200 rounded-full dark:bg-gray-700 min-w-44 w-full mb-4" />
-                      <td className="h-3 block bg-gray-200 rounded-full dark:bg-gray-700 min-w-44 w-full mb-4" />
-                      <td className="h-3 block bg-gray-200 rounded-full dark:bg-gray-700 min-w-44 w-full mb-4" />
-                      <td className="h-3 block bg-gray-200 rounded-full dark:bg-gray-700 min-w-44 w-full mb-4" />
+                      <td className="h-3 block bg-gray-700 rounded-full min-w-44 w-full mb-4" />
+                      <td className="h-3 block bg-gray-700 rounded-full min-w-44 w-full mb-4" />
+                      <td className="h-3 block bg-gray-700 rounded-full min-w-44 w-full mb-4" />
+                      <td className="h-3 block bg-gray-700 rounded-full min-w-44 w-full mb-4" />
+                      <td className="h-3 block bg-gray-700 rounded-full min-w-44 w-full mb-4" />
                     </tr>
                   }
                   )}
@@ -381,17 +379,12 @@ function ReUseAbleTable({ loader = true, buttons, data, cols, handleRow, fetchDa
             </table>
           )}
         </div>
-
-
+{/* pagination */}
         <div className="flex items-center justify-end space-x-2 py-4">
-          {/* <div className="flex-1 text-sm text-muted-foreground">
-                            {table.getFilteredSelectedRowModel().rows.length} of{" "}
-                            {table.getFilteredRowModel().rows.length} row(s) selected.
-                        </div> */}
           <div className="flex-1 text-sm text-muted-foreground">
             {pageNo} of {totalPage || 1} page(s).</div>
           <div className="flex gap-2 items-start">
-            <select type="select" onChange={countChange} value={perPage} className="text-primary  border outline-none border-primary border-solid disabled:opacity-70 disabled:text-desc rounded text-sm  p-1"  >
+            <select type="select" onChange={countChange} value={perPage} className="bg-primary text-primary-foreground border outline-none border-primary border-solid disabled:opacity-70 disabled:text-desc rounded text-sm  p-1"  >
               {
                 selectOption?.map((option, i) => {
                   return <option key={i} value={option?.value}>{option?.name}</option>

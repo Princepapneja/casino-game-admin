@@ -32,8 +32,8 @@ const {user}= useGlobal()
                       : '/Images/persona.avif'}
                     alt=''
                   />
-                  <div className='absolute top-0 right-0 w-5 bg-white backdrop-blur-3xl  '>
-                    <Edit className='w-5 text-black' />
+                  <div className='absolute top-0 right-0 w-5 bg-background-foreground backdrop-blur-3xl  '>
+                    <Edit className='w-5 text-secondary-foreground' />
                   </div>
                 </label>
               </span>

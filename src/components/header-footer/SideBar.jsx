@@ -40,7 +40,7 @@ const SideBar = () => {
         <>
             <aside
                 style={{ top: `${height}px`, height: `calc(100vh - ${height}px)`, minWidth: '230px' }}
-                className={`fixed ${sideBarOpen ? "left-0" : "-left-full"}  z-10 duration-500  md:static  md:!h-screen grid items-stretch   bg-white   p-4 shadow-lg shadow-background`}>
+                className={`fixed ${sideBarOpen ? "left-0" : "-left-full"} z-10 duration-500  md:static  md:!h-screen grid items-stretch bg-secondary p-4 shadow-lg`}>
                 <div>
                     <div className='background grid place-items-center'>
                         <img src={"/logos/TCFWC.png"} alt="Logo" className='w-36' />
@@ -55,7 +55,7 @@ const SideBar = () => {
                                     <Link
                                         to={item.href ? item.href : "#"}
                                         onClick={() => { setOpen(open === index ? null : index); item.href && setSideBarOpen(false) }}
-                                        className={`capitalize block no-underline whitespace-nowrap duration-300 ${isActive ? 'text-primary bg-background' : 'text-text'} rounded-lg hover:text-primary hover:bg-background p-4`}
+                                        className={`capitalize block no-underline whitespace-nowrap duration-300 ${isActive ? 'text-primary bg-background' : 'text-background-foreground'} rounded-lg hover:text-primary hover:bg-background p-4`}
                                     >
                                         <div className='flex justify-between items-center'>
                                             <div className='flex gap-2 items-center'>
